@@ -1,0 +1,35 @@
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[user]
+	name = jace-ys
+	email = jaceys.tan@gmail.com
+[alias]
+	a = add
+	aa = add --all
+	ap = add --patch
+	br = branch
+	brd = branch -D
+	c = commit
+	cl = clone
+	co = checkout
+	cob = checkout -b
+	cp = cherry-pick
+	d = diff
+	f = fetch
+	l = log --oneline
+	p = push
+	pf = push --force-with-lease
+	pl = pull
+	rb = rebase
+	rs = reset
+	s = status
+	st = stash
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	excludesfile = /Users/jaceys/.gitignore
+[interactive]
+	diffFilter = diff-so-fancy --patch
+[pull]
+	rebase = true
+[fetch]
+	prune = true

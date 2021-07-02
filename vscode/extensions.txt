@@ -1,0 +1,7 @@
+golang.go
+ms-azuretools.vscode-docker
+quicktype.quicktype
+rust-lang.rust
+vscode-icons-team.vscode-icons
+vscodevim.vim
+zhuangtongfa.material-theme
