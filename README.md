@@ -5,6 +5,8 @@ Configuration files for Jace's local development environment.
 ## Requirements
 
 - MacOS
+- Git
+- Zsh
 
 ## Usage
 
@@ -22,3 +24,11 @@ Run the provided setup script:
 
 - Run `p10k configure` to install the recommended font
 
+## Additional
+
+- [Go](https://formulae.brew.sh/formula/go)
+- [Rust](https://www.rust-lang.org/)
+- [Hugo](https://formulae.brew.sh/formula/hugo)
+- [Heroku](https://devcenter.heroku.com/articles/heroku-cli#other-installation-methods)
+- [Terraform](https://formulae.brew.sh/formula/terraform)
+- [Docker](https://docs.docker.com/docker-for-mac/install/)
