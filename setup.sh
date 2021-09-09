@@ -18,6 +18,7 @@ brew install git-lfs
 brew install --cask visual-studio-code
 brew tap homebrew/cask-fonts && brew install --cask font-jetbrains-mono
 ln -sf "$(pwd)/vscode/settings.json" "$HOME/Library/Application Support/Code/User/settings.json"
+ln -sf "$(pwd)/vscode/keybindings.json" "$HOME/Library/Application Support/Code/User/keybindings.json"
 
 while read extension; do
     code --install-extension $extension --force

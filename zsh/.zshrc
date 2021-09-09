@@ -121,8 +121,8 @@ alias home="cd $HOME"
 alias repos="cd $HOME/Repositories"
 alias dsprune="find . -name '*.DS_Store' -type f -delete"
 
-# To customize prompt, run `p10k configure` or edit ~/Repositories/.dotfiles/p10k/.p10k.zsh.
-[[ ! -f ~/Repositories/.files/p10k/.p10k.zsh ]] || source ~/Repositories/.files/p10k/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # The next line updates PATH for Netlify's Git Credential Helper.
 test -f '/Users/jaceys/Library/Preferences/netlify/helper/path.zsh.inc' && source '/Users/jaceys/Library/Preferences/netlify/helper/path.zsh.inc'
