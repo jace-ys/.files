@@ -84,7 +84,7 @@ plugins=(
   git
   golang
   kubectl
-  osx
+  macos 
   terraform
   tmux
   zsh-syntax-highlighting
@@ -120,6 +120,8 @@ source $ZSH/oh-my-zsh.sh
 alias home="cd $HOME"
 alias repos="cd $HOME/Repositories"
 alias dsprune="find . -name '*.DS_Store' -type f -delete"
+
+alias d="docker"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
