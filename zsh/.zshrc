@@ -78,13 +78,13 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  cargo
   docker
   docker-compose
   git
   golang
   kubectl
   macos 
+  rust 
   terraform
   tmux
   zsh-syntax-highlighting
