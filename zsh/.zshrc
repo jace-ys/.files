@@ -123,6 +123,10 @@ alias dsprune="find . -name '*.DS_Store' -type f -delete"
 
 alias d="docker"
 
+function dotenv() {
+  set -a; . ./.env; set +a
+}
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
