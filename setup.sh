@@ -42,7 +42,4 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 ln -sf "$(pwd)/p10k/.p10k.zsh" "$HOME/.p10k.zsh"
 
 # tools
-brew install gotop ripgrep tmux tree
-
-# misc
-brew install --cask aerial
+brew install gotop ripgrep tmux tree jq grpcurl

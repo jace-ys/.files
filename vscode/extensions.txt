@@ -8,4 +8,6 @@ rust-lang.rust
 tamasfe.even-better-toml
 vscode-icons-team.vscode-icons
 vscodevim.vim
+yzhang.markdown-all-in-one
 zhuangtongfa.material-theme
+zxh404.vscode-proto3
