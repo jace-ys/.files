@@ -26,10 +26,8 @@ Run the provided setup script:
 
 ## Additional
 
-- [Go](https://formulae.brew.sh/formula/go)
 - [Rust](https://www.rust-lang.org/)
 - [Hugo](https://formulae.brew.sh/formula/hugo)
 - [Heroku](https://devcenter.heroku.com/articles/heroku-cli#other-installation-methods)
 - [Netlify](https://formulae.brew.sh/formula/netlify-cli)
-- [Terraform](https://formulae.brew.sh/formula/terraform)
 - [Docker](https://docs.docker.com/docker-for-mac/install/)

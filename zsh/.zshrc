@@ -90,6 +90,7 @@ plugins=(
   zsh-syntax-highlighting
 )
 
+zstyle ':omz:plugins:docker' legacy-completion yes
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -122,13 +123,10 @@ alias repos="cd $HOME/Repositories"
 alias dsprune="find . -name '*.DS_Store' -type f -delete"
 
 alias d="docker"
-
-function dotenv() {
-  set -a; . "$1"; set +a
-}
+alias k="kubectl"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# The next line updates PATH for Netlify's Git Credential Helper.
-test -f '/Users/jaceys/Library/Preferences/netlify/helper/path.zsh.inc' && source '/Users/jaceys/Library/Preferences/netlify/helper/path.zsh.inc'
+# Enable direnv
+eval "$(direnv hook zsh)"
