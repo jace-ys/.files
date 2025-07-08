@@ -1,2 +1,2 @@
 export:
-	code --list-extensions > vscode/extensions.txt
+	cursor --list-extensions > cursor/extensions.txt
