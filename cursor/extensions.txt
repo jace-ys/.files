@@ -1,0 +1,5 @@
+golang.go
+hashicorp.terraform
+pkief.material-icon-theme
+vscodevim.vim
+zhuangtongfa.material-theme

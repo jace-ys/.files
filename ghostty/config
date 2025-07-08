@@ -1,0 +1,4 @@
+font-family = "JetBrainsMono Nerd Font Mono"
+fullscreen = true
+confirm-close-surface = false
+copy-on-select = clipboard
