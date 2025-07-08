@@ -1,41 +1,78 @@
 [url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
+    insteadOf = https://github.com/
 [user]
-	name = jace-ys
-	email = jaceys.tan@gmail.com
+    name = jace-ys
+    email = jaceys.tan@gmail.com
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA7mixgqMGidTRc4v9Ada5wqkE/yHJUIrweTIXFzH2ge
 [alias]
-	a = add
-	aa = add --all
-	ap = add --patch
-	br = branch
-	brd = branch -D
-	c = commit
-	cl = clone
-	co = checkout
-	cob = checkout -b
-	cp = cherry-pick
-	d = diff
-	f = fetch
-	l = log --oneline
-	p = push
-	pf = push --force-with-lease
-	pl = pull
-	rb = rebase
-	rs = reset
-	s = status
-	st = stash
-[core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
-	excludesfile = /Users/jaceys/.gitignore
+    a = add
+    aa = add --all
+    ap = add --patch
+    br = branch
+    brd = branch -D
+    c = commit
+    ca = commit --amend
+    cane = commit --amend --no-edit
+    cl = clean -d
+    cm = commit -m
+    co = checkout
+    cob = checkout -b
+    d = diff
+    ds = diff --staged
+    f = fetch
+    frb = !git fetch && git rebase -i origin/HEAD
+    l = log --oneline
+    p = push
+    pf = push --force-with-lease
+    pl = pull
+    rb = rebase
+    rba = rebase --abort
+    rbc = rebase --continue
+    rbi = rebase -i
+    rbio = rebase -i origin/HEAD
+    rs = reset
+    rsho = reset --hard origin/HEAD
+    rshu = reset --hard @{u}
+    s = status
+    st = stash push -m
+    stc = stash clear
+    std = stash drop
+    stl = stash list
+    stp = stash pop
+    sts = stash show -p
 [add "interactive"]
-	useBuiltin = false
+    useBuiltin = false
+[advice]
+    skippedCherryPicks = false
+[commit]
+    gpgsign = true
+[core]
+    excludesFile = ~/.gitignore
+    pager = delta
+[delta]
+    navigate = true
+[diff]
+    algorithm = histogram
 [fetch]
-	prune = true
+    prune = true
+    pruneTags = true
+[gpg]
+    format = ssh
+[gpg "ssh"]
+    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[init]
+    defaultBranch = main
 [interactive]
-	diffFilter = diff-so-fancy --patch
+    diffFilter = delta --color-only
+[merge]
+    conflictStyle = zdiff3
 [pull]
-	rebase = true
+    ff = only
 [push]
-	autoSetupRemote = true
+    autoSetupRemote = true
+    followTags = true
 [rebase]
-	autoStash = true
+    autoSquash = true
+    autoStash = true
+[rerere]
+    enabled = true
