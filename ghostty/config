@@ -1,0 +1,4 @@
+font-family = MesloLGS NF
+fullscreen = true
+confirm-close-surface = false
+copy-on-select = clipboard
