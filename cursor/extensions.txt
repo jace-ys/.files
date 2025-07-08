@@ -1,0 +1,8 @@
+bungcip.better-toml
+golang.go
+ms-kubernetes-tools.vscode-kubernetes-tools
+opentofu.vscode-opentofu
+pkief.material-icon-theme
+redhat.vscode-yaml
+vscodevim.vim
+zhuangtongfa.material-theme

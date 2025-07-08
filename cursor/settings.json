@@ -1,0 +1,18 @@
+{
+    "editor.fontFamily": "JetbrainsMono Nerd Font, Monaco",
+    "editor.fontLigatures": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.minimap.enabled": false,
+    "explorer.confirmDelete": false,
+    "files.autoSave": "onFocusChange",
+    "files.trimTrailingWhitespace": true,
+    "git.blame.editorDecoration.enabled": true,
+    "window.newWindowDimensions": "maximized",
+    "workbench.colorTheme": "One Dark Pro Night Flat",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.startupEditor": "none",
+    "[json]": {
+        "editor.tabSize": 2
+    }
+}
