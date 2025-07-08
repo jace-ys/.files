@@ -1,41 +1,45 @@
-set -ex
+#!/bin/bash
+
+set -e
 
 # brew
-curl -L https://github.com/Homebrew/brew/releases/download/4.2.0/Homebrew-4.2.0.pkg > Homebrew.pkg \
-    && sudo installer -pkg Homebrew.pkg -target / \
-    && rm Homebrew.pkg
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo > "$HOME/.zprofile"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> "$HOME/.zprofile"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 brew bundle
 
 # git
 ln -sf "$(pwd)/git/.gitconfig" "$HOME/.gitconfig"
-ln -sf "$(pwd)/git/.gitignore" "$HOME/.gitignore" \
-    && git config --global core.excludesfile "$HOME/.gitignore"
+ln -sf "$(pwd)/git/.gitignore" "$HOME/.gitignore"
 
-git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX" \
-    && git config --global interactive.diffFilter "diff-so-fancy --patch"
+# zsh
+ln -sf "$(pwd)/zsh/.zshrc" "$HOME/.zshrc"
 
-# vscode
-ln -sf "$(pwd)/vscode/settings.json" "$HOME/Library/Application Support/Code/User/settings.json"
-ln -sf "$(pwd)/vscode/keybindings.json" "$HOME/Library/Application Support/Code/User/keybindings.json"
+# oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/reegnz/jq-zsh-plugin.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/jq
+
+mkdir -p "$HOME/.config"
+
+# ghostty
+mkdir -p "$HOME/.config/ghostty"
+ln -sf "$(pwd)/ghostty/config" "$HOME/.config/ghostty/config"
+
+# starship
+ln -sf "$(pwd)/starship/config.toml" "$HOME/.config/starship.toml"
+
+# mise
+mkdir -p "$HOME/.config/mise"
+ln -sf "$(pwd)/mise" "$HOME/.config/mise"
+
+# cursor
+ln -sf "$(pwd)/cursor/settings.json" "$HOME/Library/Application Support/Cursor/User/settings.json"
+ln -sf "$(pwd)/cursor/keybindings.json" "$HOME/Library/Application Support/Cursor/User/keybindings.json"
 
 while read extension; do
     code --install-extension $extension --force
 done < ./vscode/extensions.txt
 
-# zsh
-ln -sf "$(pwd)/zsh/.zshrc" "$HOME/.zshrc"
-ln -sf "$(pwd)/zsh/.zshenv" "$HOME/.zshenv"
-
-# oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-# powerlevel10k
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-ln -sf "$(pwd)/p10k/.p10k.zsh" "$HOME/.p10k.zsh"
-
-# asdf
-ln -sf "$(pwd)/asdf/.tool-versions" "$HOME/.tool-versions"
+Echo "Setup complete! ✅"

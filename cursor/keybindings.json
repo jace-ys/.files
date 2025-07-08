@@ -1,4 +1,3 @@
-// Place your key bindings in this file to override the defaultsauto[]
 [
     {
         "key": "cmd+n",
@@ -21,5 +20,13 @@
         "key": "alt+cmd+up",
         "command": "-extension.vim_cmd+alt+up",
         "when": "editorTextFocus && vim.active && !inDebugRepl"
-    }
+    },
+    {
+        "key": "alt+cmd+l",
+        "command": "aichat.insertselectionintochat"
+    },
+    {
+        "key": "shift+cmd+l",
+        "command": "-aichat.insertselectionintochat"
+    },
 ]
