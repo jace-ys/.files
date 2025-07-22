@@ -2,8 +2,8 @@
     insteadOf = https://github.com/
 [user]
     name = jace-ys
-    email = jaceys.tan@gmail.com
-    # signingkey = ""
+    email = jace.tan@braze.com
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN77MQgSNoyCxXT6R4bfbXgPphJu3seYF2E0lEvYrN2Y
 [alias]
     a = add
     aa = add --all
@@ -44,7 +44,7 @@
 [advice]
     skippedCherryPicks = false
 [commit]
-    # gpgsign = true
+    gpgsign = true
 [core]
     excludesFile = ~/.gitignore
     pager = delta
