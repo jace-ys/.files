@@ -33,4 +33,8 @@
     "[yaml]": {
         "editor.tabSize": 2
     },
+    "supermaven.enable": {
+        "*": false
+    },
+    "yaml.format.printWidth": 1000,
 }

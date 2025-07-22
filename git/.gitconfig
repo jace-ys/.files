@@ -1,9 +1,13 @@
 [url "ssh://git@github.com/"]
     insteadOf = https://github.com/
+[credential "https://github.com"]
+    helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+    helper = !/opt/homebrew/bin/gh auth git-credential
 [user]
     name = jace-ys
-    email = jaceys.tan@gmail.com
-    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA7mixgqMGidTRc4v9Ada5wqkE/yHJUIrweTIXFzH2ge
+    email = jace.tan@braze.com
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN77MQgSNoyCxXT6R4bfbXgPphJu3seYF2E0lEvYrN2Y
 [alias]
     a = add
     aa = add --all
@@ -41,6 +45,7 @@
     stl = stash list
     stp = stash pop
     sts = stash show -p
+    vacuum = "!f(){ git fetch --all --prune -q && git worktree prune; git for-each-ref --format=\"%(refname:short)|%(upstream:track)|%(worktreepath)\" refs/heads | while IFS=\"|\" read -r b t wt; do [ \"$t\" = \"[gone]\" ] || continue; if [ -n \"$wt\" ]; then git worktree remove --force \"$wt\" && echo \"removed worktree $wt\"; fi; git branch -D \"$b\" && echo \"deleted branch $b\"; done; }; f"
 [add "interactive"]
     useBuiltin = false
 [advice]
@@ -49,7 +54,7 @@
     gpgsign = true
 [core]
     excludesFile = ~/.gitignore
-    sshCommand = "ssh -i ~/.ssh/github.pub"
+    sshCommand = "ssh -i ~/.ssh/github-braze.pub"
     pager = delta
 [delta]
     navigate = true
@@ -78,3 +83,6 @@
     autoStash = true
 [rerere]
     enabled = true
+
+[includeIf "gitdir:/Users/jace.tan/src/github.com/jace-ys/"]
+    path = /Users/jace.tan/src/github.com/jace-ys/.files/git/.gitconfig-personal

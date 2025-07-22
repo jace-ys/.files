@@ -1,3 +1,4 @@
+cuelangorg.vscode-cue
 golang.go
 kilocode.kilo-code
 ms-azuretools.vscode-containers
