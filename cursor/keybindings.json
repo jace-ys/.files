@@ -29,4 +29,8 @@
         "key": "shift+cmd+l",
         "command": "-aichat.insertselectionintochat"
     },
+    {
+        "key": "shift+cmd+l",
+        "command": "-composer.newAgentChat"
+    },
 ]
