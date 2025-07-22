@@ -14,5 +14,8 @@
     "workbench.startupEditor": "none",
     "[json]": {
         "editor.tabSize": 2
+    },
+    "vs-kubernetes": {
+        "vs-kubernetes.crd-code-completion": "disabled"
     }
 }

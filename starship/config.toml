@@ -8,5 +8,50 @@ tag_disabled = false
 disabled = false
 symbol = '⛵ '
 
+[[kubernetes.contexts]]
+context_pattern = 'k8s\.(?<name>[^.]+)\.(?<env>cp|p)-(?<region>[^.]+)\.braze\.(com|eu)-opsadmin'
+context_alias = '[$env] $name.$env-$region ‼️'
+style = 'bold red'
+symbol = '⛵🚨 '
+
+[[kubernetes.contexts]]
+context_pattern = 'k8s\.(?<name>[^.]+)\.(?<env>cp|p)-(?<region>[^.]+)\.braze\.(com|eu)-(?<role>.+)'
+context_alias = '[$env] $name.$env-$region'
+style = 'bold red'
+symbol = '⛵🚨 '
+
+[[kubernetes.contexts]]
+context_pattern = 'k8s\.(?<name>[^.]+)\.(?<env>s)-(?<region>[^.]+)\.braze\.(com|eu)-opsadmin'
+context_alias = '[$env] $name.$env-$region ‼️'
+style = 'bold yellow'
+
+[[kubernetes.contexts]]
+context_pattern = 'k8s\.(?<name>[^.]+)\.(?<env>s)-(?<region>[^.]+)\.braze\.(com|eu)-(?<role>.+)'
+context_alias = '[$env] $name.$env-$region'
+style = 'bold yellow'
+
+[[kubernetes.contexts]]
+context_pattern = 'k8s\.(?<name>[^.]+)\.(?<env>cd|d)-(?<region>[^.]+)\.braze\.(com|eu)-opsadmin'
+context_alias = '[$env] $name.$env-$region ‼️'
+style = 'bold green'
+
+[[kubernetes.contexts]]
+context_pattern = 'k8s\.(?<name>[^.]+)\.(?<env>cd|d)-(?<region>[^.]+)\.braze\.(com|eu)-(?<role>.+)'
+context_alias = '[$env] $name.$env-$region'
+style = 'bold green'
+
+[[kubernetes.contexts]]
+context_pattern = 'k8s\.(?<name>[^.]+)\.(?<env>t)-(?<region>[^.]+)\.braze\.(com|eu)-opsadmin'
+context_alias = '[$env] $name.$env-$region ‼️'
+style = 'bold blue'
+
+[[kubernetes.contexts]]
+context_pattern = 'k8s\.(?<name>[^.]+)\.(?<env>t)-(?<region>[^.]+)\.braze\.(com|eu)-(?<role>.+)'
+context_alias = '[$env] $name.$env-$region'
+style = 'bold blue'
+
+[terraform]
+format = 'via [$symbol $workspace/$version]($style) '
+
 [time]
 disabled = false

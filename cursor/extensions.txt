@@ -1,4 +1,5 @@
 bungcip.better-toml
+cuelang.cue
 golang.go
 hashicorp.terraform
 ms-kubernetes-tools.vscode-kubernetes-tools
