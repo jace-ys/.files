@@ -1,0 +1,6 @@
+[user]
+    name = jace-ys
+    email = jaceys.tan@gmail.com
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA7mixgqMGidTRc4v9Ada5wqkE/yHJUIrweTIXFzH2ge
+[core]
+    excludesFile = /Users/jace.tan/src/github.com/jace-ys/.files/git/.gitignore-personal
