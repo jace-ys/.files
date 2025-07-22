@@ -30,6 +30,7 @@ plugins=(
     mise
     opentofu
     starship
+    terraform
     thefuck
     tldr
     tmux

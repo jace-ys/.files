@@ -10,5 +10,6 @@
     "window.newWindowDimensions": "maximized",
     "workbench.colorTheme": "One Dark Pro",
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "yaml.format.enable": false
 }
