@@ -1,0 +1,5 @@
+[tools]
+awscli = { version = "2.32.32", symlink_bins = "true" }
+azure = "2.81.0"
+helm = "3.20.0"
+sops = "3.11.0"
