@@ -14,5 +14,13 @@
     "workbench.startupEditor": "none",
     "[json]": {
         "editor.tabSize": 2
-    }
+    },
+    "vs-kubernetes": {
+        "vs-kubernetes.crd-code-completion": "disabled"
+    },
+    "python.languageServer": "None",
+    "cursorpyright.disableLanguageServices": true,
+    "cue.enableEmbeddedFilesSupport": false,
+    "json.format.keepLines": true,
+    "yaml.format.printWidth": 1000
 }

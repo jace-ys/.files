@@ -2,8 +2,8 @@
     insteadOf = https://github.com/
 [user]
     name = jace-ys
-    email = jaceys.tan@gmail.com
-    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA7mixgqMGidTRc4v9Ada5wqkE/yHJUIrweTIXFzH2ge
+    email = jace.tan@braze.com
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN77MQgSNoyCxXT6R4bfbXgPphJu3seYF2E0lEvYrN2Y
 [alias]
     a = add
     aa = add --all
@@ -76,3 +76,6 @@
     autoStash = true
 [rerere]
     enabled = true
+
+[includeIf "gitdir:/Users/jace.tan/src/github.com/jace-ys/"]
+    path = /Users/jace.tan/src/github.com/jace-ys/.files/git/.gitconfig-personal
