@@ -1,48 +1,51 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
-# brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo > "$HOME/.zprofile"
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> "$HOME/.zprofile"
-eval "$(/opt/homebrew/bin/brew shellenv)"
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+NC='\033[0m'
 
+info()    { echo -e "${BLUE}==>${NC} $1"; }
+success() { echo -e "${GREEN}✅ $1${NC}"; }
+
+REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+symlink() {
+    local src="$1" dst="$2"
+    [ ! -e "$src" ] && return
+
+    mkdir -p "$(dirname "$dst")"
+    ln -sfn "$src" "$dst"
+    echo "  $dst -> $(basename "$src")"
+}
+
+info "Syncing Homebrew packages..."
 brew bundle
 
-# git
-ln -sf "$(pwd)/git/.gitconfig" "$HOME/.gitconfig"
-ln -sf "$(pwd)/git/.gitignore" "$HOME/.gitignore"
+info "Syncing dotfiles..."
+for src in "$REPO"/ssh/*; do
+    symlink "$src" "$HOME/.ssh/$(basename "$src")"
+done
+symlink "$REPO/git/.gitconfig"       "$HOME/.gitconfig"
+symlink "$REPO/git/.gitignore"       "$HOME/.gitignore"
+symlink "$REPO/zsh/.zshrc"           "$HOME/.zshrc"
+symlink "$REPO/ghostty/config"       "$HOME/.config/ghostty/config"
+symlink "$REPO/starship/config.toml" "$HOME/.config/starship.toml"
+symlink "$REPO/mise"                 "$HOME/.config/mise"
 
-# zsh
-ln -sf "$(pwd)/zsh/.zshrc" "$HOME/.zshrc"
+info "Syncing Cursor settings..."
+symlink "$REPO/cursor/settings.json"    "$HOME/Library/Application Support/Cursor/User/settings.json"
+symlink "$REPO/cursor/keybindings.json" "$HOME/Library/Application Support/Cursor/User/keybindings.json"
+while read -r ext; do
+    cursor --install-extension "$ext" --force
+done < "$REPO/cursor/extensions.txt"
 
-# oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/reegnz/jq-zsh-plugin.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/jq
+info "Syncing VS Code settings..."
+symlink "$REPO/vscode/settings.json"    "$HOME/Library/Application Support/Code/User/settings.json"
+symlink "$REPO/vscode/keybindings.json" "$HOME/Library/Application Support/Code/User/keybindings.json"
+while read -r ext; do
+    code --install-extension "$ext" --force
+done < "$REPO/vscode/extensions.txt"
 
-mkdir -p "$HOME/.config"
-
-# ghostty
-mkdir -p "$HOME/.config/ghostty"
-ln -sf "$(pwd)/ghostty/config" "$HOME/.config/ghostty/config"
-
-# starship
-ln -sf "$(pwd)/starship/config.toml" "$HOME/.config/starship.toml"
-
-# mise
-mkdir -p "$HOME/.config/mise"
-ln -sf "$(pwd)/mise" "$HOME/.config/mise"
-
-# cursor
-ln -sf "$(pwd)/cursor/settings.json" "$HOME/Library/Application Support/Cursor/User/settings.json"
-ln -sf "$(pwd)/cursor/keybindings.json" "$HOME/Library/Application Support/Cursor/User/keybindings.json"
-
-while read extension; do
-    code --install-extension $extension --force
-done < ./cursor/extensions.txt
-
-# gh
-gh extension install dlvhdr/gh-dash
-
-Echo "Setup complete! ✅"
+success "Setup complete!"

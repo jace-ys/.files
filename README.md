@@ -12,5 +12,5 @@ Configuration files for Jace's local development environment.
 Run the provided setup script:
 
 ```
-./setup.sh
+make bootstrap
 ```

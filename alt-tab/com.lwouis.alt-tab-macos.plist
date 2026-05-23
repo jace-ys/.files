@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>appearanceSize</key>
+	<string>2</string>
+	<key>captureWindowsInBackground</key>
+	<string>false</string>
+	<key>hideColoredCircles</key>
+	<string>true</string>
+	<key>hideSpaceNumberLabels</key>
+	<string>true</string>
+	<key>hideStatusIcons</key>
+	<string>true</string>
+	<key>menubarIconShown</key>
+	<string>false</string>
+	<key>screensToShow</key>
+	<string>1</string>
+	<key>settingsWindowShownOnFirstLaunch</key>
+	<string>true</string>
+	<key>showTitles</key>
+	<string>2</string>
+	<key>showWindowlessApps</key>
+	<string>1</string>
+	<key>spacesToShow</key>
+	<string>1</string>
+	<key>updatePolicy</key>
+	<string>1</string>
+</dict>
+</plist>
