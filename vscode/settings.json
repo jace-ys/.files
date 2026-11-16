@@ -11,6 +11,12 @@
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
     "git.blame.editorDecoration.enabled": true,
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+    },
     "github.copilot.nextEditSuggestions.enabled": false,
     "redhat.telemetry.enabled": false,
     "supermaven.allowGitignore": true,
